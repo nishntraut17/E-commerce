@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ClearIcon from '@mui/icons-material/Clear';
@@ -9,8 +8,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import toast from 'react-hot-toast';
 
 const Cart = ({ isCollapsed, setIsCollapsed, cartItems, setCartItems }) => {
-    const token = localStorage.getItem("token");
-    const products = [];
     const [cost, setCost] = useState(0);
 
     useEffect(() => {
@@ -34,15 +31,12 @@ const Cart = ({ isCollapsed, setIsCollapsed, cartItems, setCartItems }) => {
         }
     }
 
-    const handleCart = () => {
-        setIsCollapsed(!isCollapsed)
-    }
     return (
         <>
             {!isCollapsed && (
                 <motion.aside
                     initial={{ width: 0 }}
-                    animate={{ width: 500 }}
+                    animate={{ width: 400 }}
                     exit={{ width: 0, transition: { delay: 0.7, duration: 0.3 } }}
                     className="overflow-auto max-h-screen min-h-screen fixed top-0 right-0 backdrop-blur-sm bg-[#ffffffde] p-6 z-50"
 

@@ -5,7 +5,6 @@ import axios from 'axios';
 
 export default function Login() {
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(false);
 
     const [formDetails, setFormDetails] = useState({
         email: '',
@@ -21,7 +20,6 @@ export default function Login() {
 
     const formSubmit = async (e) => {
         try {
-            setLoading(true);
             e.preventDefault();
             const { email, password } = formDetails;
             if (!email || !password) {
@@ -42,17 +40,11 @@ export default function Login() {
             )
 
             localStorage.setItem("token", data.token);
-            setLoading(false);
             return navigate("/");
         }
         catch (error) {
-            setLoading(false);
             return error;
         }
-    }
-
-    if (loading) {
-        <p className='p-10'>Loading..</p>
     }
 
     return (

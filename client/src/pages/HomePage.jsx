@@ -5,11 +5,11 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import toast from 'react-hot-toast';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
-import LoginIcon from '@mui/icons-material/Login';
 import Cart from '../components/Cart';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -57,7 +57,7 @@ const HomePage = () => {
     }
 
     if (loading) {
-        return <p className=''>Loading...</p>
+        return <CircularProgress />
     }
 
     const handleLogout = () => {
@@ -67,12 +67,12 @@ const HomePage = () => {
 
     return (
         <div className="">
-            <div className="flex gap-2 flex-col p-16">
+            <div className="flex gap-2 flex-col px-16 py-4">
                 <div className='flex justify-end items-end gap-2'>
                     {token ? (
                         <>
                             {isHovered && (
-                                <p className='opacity-80 z-20 shadow-md rounded-md px-1 flex flex-col absolute top-12 right-48'>
+                                <p className='opacity-80 z-20 shadow-md rounded-md px-1 flex flex-col absolute top-4 right-44'>
                                     <p>{user.name}</p>
                                     <p>{user.email}</p>
                                 </p>
@@ -88,10 +88,17 @@ const HomePage = () => {
                             </button>
                         </>
                     ) : (
-                        <Link to="/login" className='hover:opacity-60 flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
-                            {"Login "}
-                            <LoginIcon />
-                        </Link>
+                        <div className='flex gap-2'>
+                            <Link to="/login" className='hover:opacity-60 flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+                                {"Login "}
+
+                            </Link>
+                            <Link to="/signup" className='hover:opacity-60 flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+                                {"Signup "}
+
+                            </Link>
+                        </div>
+
                     )}
 
                 </div>
