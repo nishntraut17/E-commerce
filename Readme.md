@@ -1,3 +1,6 @@
+### Deployment Link:
+https://e-commerce-cyan-beta.vercel.app
+
 ### Home Page
 The home page serves as the main entry point for users. It offers a seamless navigation experience with SignUp and Login options on the top right corner for visitors who are not logged in, and for those who are logged in, it provides a profile icon and a logout button. A convenient cart icon is also present, opening the cart menu when clicked. The page showcases a comprehensive list of all available products.
 
