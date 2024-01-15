@@ -35,7 +35,7 @@ export default function Signup() {
             }
 
             await toast.promise(
-                axios.post("http://localhost:5000/api/user/register", {
+                axios.post("https://e-commerce-backend-cdqf.onrender.com/api/user/register", {
                     name, email, password
                 }),
                 {
