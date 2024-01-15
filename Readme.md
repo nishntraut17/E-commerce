@@ -14,10 +14,9 @@ The login page facilitates user access through email and password. Users are req
 ![Login](client/src/assets/login.png)
 
 ### SignUp Page
-Creating an account is made simple yet secure. Users must provide a unique and valid email address, and the password must be more than 8 characters, matching the confirm password. Upon successful verification, an "Email sent" alert pops up.
-
+Creating an account is made simple yet secure. Users must provide a unique and valid email address, and the password must be more than 8 characters, matching the confirm password.
 ![SignUp](client/src/assets/signup.png)
-
+Upon successful verification, an "Email sent" alert pops up.
 ![SignUp2](client/src//assets/signup2.png)
 
 ### Verification Email
